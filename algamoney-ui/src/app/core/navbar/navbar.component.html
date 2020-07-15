@@ -1,0 +1,34 @@
+<nav class="navbar-ui">
+  <div class="container">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <a href="javascript:;" class="navbar-toggle" (click)="exibeMenu = !exibeMenu">
+          <i class="pi pi-bars"> </i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <ul class="navbar-menu" [hidden]="!exibeMenu">
+    <li class="navbar-usuario">{{ auth.jwtPayload?.nome }}</li>
+
+    <li class="navbar-menu-item" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
+      <a routerLink="dashboard">Dashboard</a>
+    </li>
+
+    <li class="navbar-menu-item" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
+      <a routerLink="lancamentos">Lançamentos</a>
+    </li>
+    <li class="navbar-menu-item" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_PESQUISAR_PESSOA')">
+      <a routerLink="pessoas">Pessoas</a>
+    </li>
+
+    <li class="navbar-menu-item" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
+      <a routerLink="relatorios/lancamentos">Relatórios</a>
+    </li>
+
+    <li class="navbar-menu-item"  >
+      <a href="javascript:;" (click)="logout()">Logout</a>
+    </li>
+  </ul>
+</nav>

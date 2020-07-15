@@ -1,0 +1,21 @@
+<app-navbar *ngIf="exibirNavbar()"></app-navbar>
+
+<router-outlet></router-outlet>
+
+<!--
+<app-lancamento-cadastro></app-lancamento-cadastro>
+<app-pessoa-cadastro></app-pessoa-cadastro>
+<app-pessoa-pesquisa></app-pessoa-pesquisa>
+<app-lancamentos-pesquisa></app-lancamentos-pesquisa>
+<app-lancamento-cadastro></app-lancamento-cadastro>
+ -->
+
+<ng2-toasty></ng2-toasty>
+<p-confirmDialog #confirmacao
+  header="Confirmação de exclusão"
+  icon="pi pi-exclamation-triangle">
+  <p-footer>
+    <button pButton (click)="confirmacao.accept()" icon="pi pi-check" label="Sim" class="ui-button-warning"></button>
+    <button pButton (click)="confirmacao.reject()" icon="pi pi-times" label="Não"></button>
+  </p-footer>
+</p-confirmDialog>
