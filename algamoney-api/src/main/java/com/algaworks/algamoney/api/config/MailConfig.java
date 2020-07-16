@@ -28,10 +28,10 @@ public class MailConfig {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setJavaMailProperties(props);
 
-        mailSender.setHost(property.getMail().getHost());
+/*         mailSender.setHost(property.getMail().getHost());
         mailSender.setPort(property.getMail().getPort());
         mailSender.setUsername(property.getMail().getUsername());
-        mailSender.setPassword(property.getMail().getPassword());
+        mailSender.setPassword(property.getMail().getPassword()); */
 
 
         return mailSender;
